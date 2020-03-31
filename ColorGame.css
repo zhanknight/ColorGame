@@ -1,0 +1,21 @@
+body {
+    background-color: #232323;
+}
+
+h1 {
+    color: aliceblue;
+}
+
+.square {
+    float: left;
+    padding-top: 30%;
+    margin: 1.6%;
+    background: purple;
+    width: 30%;
+}
+
+#container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
