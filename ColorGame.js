@@ -19,7 +19,7 @@ var statusBar = document.querySelector("#status");
 
 // reset button
 document.querySelector("#reset").addEventListener("click", function(){
-    
+    document.querySelector("#title").style.backgroundColor = "#232323";
     statusBar.textContent = "Which color is it?";
     gameLogic();
 
@@ -71,6 +71,7 @@ function colorChosen() {
     if (this.style.backgroundColor === winnerColor) {
         statusBar.textContent = "You win the points!";
         targetColorDisplay.style.backgroundColor = winnerColor;
+        document.querySelector("#title").style.backgroundColor = winnerColor;
         for (i = 0; i < squares.length; i++) {
             squares[i].style.backgroundColor = this.style.backgroundColor;
         }
