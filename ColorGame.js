@@ -1,21 +1,21 @@
 // VARIABLES HERE VVVVVVVVVVVV
 
 // var gameMode = 6;
-var colors = [];
+let colors = [];
     // for (i=0; i < gameMode; i++) {
     //     colors.push(randomColorMaker());
     // }
-var squares = document.querySelectorAll(".square");
-var nopeList = [
+let squares = document.querySelectorAll(".square");
+const nopeList = [
     "Nope!",
     "Not it!",
     "Try again!",
     "Wrong one!",
     "That's not it!",
 ]
-var nopeCounter = 0;
-var targetColorDisplay = document.querySelector("#TargetColor");
-var statusBar = document.querySelector("#status");
+let nopeCounter = 0;
+let targetColorDisplay = document.querySelector("#TargetColor");
+let statusBar = document.querySelector("#status");
 
 // reset button
 document.querySelector("#reset").addEventListener("click", function(){
@@ -93,16 +93,16 @@ function colorChosen() {
 function randomColorMaker() {
 // create array of random colors
 
-        var num = Math.round(0xffffff * Math.random());
-        var r = num >> 16;
-        var g = num >> 8 & 255;
-        var b = num & 255;
+        let num = Math.round(0xffffff * Math.random());
+        let r = num >> 16;
+        let g = num >> 8 & 255;
+        let b = num & 255;
         return 'rgb(' + r + ', ' + g + ', ' + b + ')';
 }
 
 
 function randomWinnerSelector() {
 // grab a random color from the colors array based on game mode
-    var p = Math.floor(Math.random() * colors.length);
+    let p = Math.floor(Math.random() * colors.length);
     return colors[p];
 }
