@@ -1,10 +1,5 @@
 // VARIABLES HERE VVVVVVVVVVVV
-
-// var gameMode = 6;
 let colors = [];
-    // for (i=0; i < gameMode; i++) {
-    //     colors.push(randomColorMaker());
-    // }
 let squares = document.querySelectorAll(".square");
 const nopeList = [
     "Nope!",
@@ -24,27 +19,6 @@ document.querySelector("#reset").addEventListener("click", function(){
     gameLogic();
 
 })
-
-// game mode button
-// document.querySelector("#gamemode").addEventListener("click", function(){
-//     if (gameMode === 6) {
-//         gameMode = 3;
-//         document.querySelector("#gamemode").textContent = "Hard Mode";
-//         gameLogic();
-//     } else {
-//         gameMode = 6;
-//         document.querySelector("#gamemode").textContent = "Easy Mode";
-//         gameLogic();
-//     }
-// })
-
-
-// GAME LOGIC STARTS HERE VVVVVVVVV
-
-// assign random color to each box in a for loop
-gameLogic();
-
-
 
 // FUNCTIONS DOWN HERE VVVVVVVVVV
 function gameLogic() {
@@ -76,7 +50,6 @@ function colorChosen() {
             squares[i].style.backgroundColor = this.style.backgroundColor;
         }
     }
-    
        else {
         nopeCounter++;
         if (nopeCounter > 4) {
@@ -86,13 +59,10 @@ function colorChosen() {
         this.style.backgroundColor = "#232323";
         this.removeEventListener("click", colorChosen);
        }
-        
-    
 }
 
 function randomColorMaker() {
 // create array of random colors
-
         let num = Math.round(0xffffff * Math.random());
         let r = num >> 16;
         let g = num >> 8 & 255;
@@ -100,9 +70,11 @@ function randomColorMaker() {
         return 'rgb(' + r + ', ' + g + ', ' + b + ')';
 }
 
-
 function randomWinnerSelector() {
 // grab a random color from the colors array based on game mode
     let p = Math.floor(Math.random() * colors.length);
     return colors[p];
 }
+
+// start game
+gameLogic();
