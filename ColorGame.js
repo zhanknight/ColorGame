@@ -78,3 +78,29 @@ function randomWinnerSelector() {
 
 // start game
 gameLogic();
+
+// slide down the whole thing on page load to look cool
+let container = document.querySelector('#container')
+
+function isReady(callbackFunc) {
+    if (document.readyState !== 'loading') {
+      // Document is already ready, call the callback directly
+      callbackFunc();
+    } else if (document.addEventListener) {
+      // All modern browsers to register DOMContentLoaded
+      document.addEventListener('DOMContentLoaded', callbackFunc);
+     } 
+  }
+  
+isReady(function() {
+if(!container.classList.contains('active')) {
+    container.classList.add('active')
+    container.style.height = "auto"
+    let height = container.clientHeight + "px"
+    container.style.height = "0px"
+    setTimeout(() => {
+        container.style.height = height
+    }, 0) 
+} 
+});
+
